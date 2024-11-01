@@ -62,7 +62,15 @@ who1 <- who %>%
     )
 ```
 
-
+```{r}
+who2 <- who1 %>%
+  mutate(key = str_replace(key, "newrel", "new_rel")) %>%
+  separate(
+    col = key,
+    into = combine("new", "type", "sexage"),
+    sep = "_"
+  )
+```
 
 
 ### Exercise 1
